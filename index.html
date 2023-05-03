@@ -1,0 +1,175 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="assets/img/key.png" type="image/icon type">
+        <title>Criptografador de Texto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div class="divCriptografia">
+                <textarea id="inputTexto0" name="inputTexto0" placeholder="Digite o texto" maxlength="255"></textarea>
+                <div class="layoutCriptografia">
+                    <img src="assets/img/information.png" id="imgInformation" alt="information icon">
+                    <p>Apenas letras minúsculas e sem acento</p>
+                </div>
+                <button onclick="criptografar()" id="buttonCriptografia">Criptografar</button>
+                <button onclick="descriptografar()" id="buttonDescriptografia">Descriptografar</button>
+            </div>
+            <div class="divResultado">
+                <textarea id="inputTexto1" name="inputTexto1" maxlength="255" placeholder=" " readonly></textarea>
+                <button onclick="copiar()" id="buttonCopiar">Copiar</button>
+            </div>
+        </main>
+        <footer>
+            <p class="nomeAutor">Heitor Gonçalves</p>
+            <a href="https://github.com/heitorgo" target="_blank">
+                <img src="assets/img/github.png" id="imgGithub" alt="Github icon">
+            </a>
+            <a href="https://www.linkedin.com/in/heitor-gon-dev/" target="_blank">
+                <img src="assets/img/linkedin.png" id="imgLinkedin" alt="Linkedin icon">
+            </a>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script>
+            var inputTexto0 = document.querySelector("#inputTexto0");
+            var inputTexto1 = document.querySelector("#inputTexto1");
+            var buttonCopiar = document.querySelector("#buttonCopiar")
+
+            function criptografar(){
+                var textoDescriptografado = inputTexto0.value;
+                if (textoDescriptografado != "" && textoDescriptografado != " "){
+                    var arrayTexto = textoDescriptografado.split('');
+                    for(var i=0; i<arrayTexto.length; i++){
+                        if(arrayTexto[i] == "e"){
+                            arrayTexto[i] = "enter";
+                        }
+                        if(arrayTexto[i] == "i"){
+                            arrayTexto[i] = "imes";
+                        }
+                        if(arrayTexto[i] == "a"){
+                            arrayTexto[i] = "ai";
+                        }
+                        if(arrayTexto[i] == "o"){
+                            arrayTexto[i] = "ober";
+                        }
+                        if(arrayTexto[i] == "u"){
+                            arrayTexto[i] = "ufat";
+                        }
+                    }
+
+                    var textoCriptografado = arrayTexto.toString();
+
+                    for(i=0; i<arrayTexto.length; i++){
+                        textoCriptografado = textoCriptografado.replace(',','');
+                    }
+
+                    inputTexto1.value = textoCriptografado;
+                    inputTexto0.value = "";
+                    tornarBotaoVisivel(buttonCopiar);
+                }
+
+            }
+
+            function descriptografar(){
+                var textoCriptografado = inputTexto0.value;
+                if(textoCriptografado != "" && textoCriptografado != " "){
+                    var arrayTexto = textoCriptografado.split('');
+                
+                    for(var i=0; i<arrayTexto.length; i++){
+                        if(arrayTexto[i] == "e"){
+                            if(arrayTexto[i+1] == "n"){
+                                if(arrayTexto[i+2] == "t"){
+                                    if(arrayTexto[i+3] == "e"){
+                                        if(arrayTexto[i+4] == "r"){
+                                            arrayTexto[i+1]="";
+                                            arrayTexto[i+2]="";
+                                            arrayTexto[i+3]="";
+                                            arrayTexto[i+4]="";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if(arrayTexto[i] == "i"){
+                            if(arrayTexto[i+1] == "m"){
+                                if(arrayTexto[i+2] == "e"){
+                                    if(arrayTexto[i+3] == "s"){
+                                        arrayTexto[i+1]="";
+                                        arrayTexto[i+2]="";
+                                        arrayTexto[i+3]="";
+                                    }
+                                }
+                            }
+                        }
+                        if(arrayTexto[i] == "a"){
+                            if(arrayTexto[i+1] == "i"){
+                                arrayTexto[i+1]="";
+                            }
+                        }
+                        if(arrayTexto[i] == "o"){
+                            if(arrayTexto[i+1] == "b"){
+                                if(arrayTexto[i+2] == "e"){
+                                    if(arrayTexto[i+3] == "r"){
+                                        arrayTexto[i+1]="";
+                                        arrayTexto[i+2]="";
+                                        arrayTexto[i+3]="";
+                                    }
+                                }
+                            }
+                        }
+                        if(arrayTexto[i] == "u"){
+                            if(arrayTexto[i+1] == "f"){
+                                if(arrayTexto[i+2] == "a"){
+                                    if(arrayTexto[i+3] == "t"){
+                                        arrayTexto[i+1]="";
+                                        arrayTexto[i+2]="";
+                                        arrayTexto[i+3]="";
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    var textoDescriptografado = arrayTexto.toString();
+
+                    for(i=0; i<arrayTexto.length; i++){
+                        textoDescriptografado = textoDescriptografado.replace(',','');
+                    }
+
+                    inputTexto1.value = textoDescriptografado;
+                    inputTexto0.value = "";
+                    tornarBotaoVisivel(buttonCopiar);
+                    
+                }
+
+            }
+
+            function copiar() {
+                inputTexto1.select();
+                document.execCommand("copy");
+                inputTexto0.focus();
+                inputTexto1.value = "";
+                tornarBotaoInvisivel(buttonCopiar);
+            }
+
+            function tornarBotaoInvisivel(botao){
+                botao.style.display = "none"
+            }
+
+            function tornarBotaoVisivel(botao){
+                botao.style.display="inline-block"
+            }
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+body{
+    background-color: #e9ecf8 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+header{
+    height: 50px;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+main div{
+    display: inline-block;
+    padding: 10px;
+}
+ main textarea{
+    resize: none;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 15px;
+}
+main button{
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid #757fb2;
+    color: #0a3871;
+    background-color: #e9ecf8;
+}
+.divCriptografia{
+    width: 60%;
+}
+#inputTexto0{
+    height: 500px;
+    background-color: #e9ecf8;
+    font-size: 30px;
+    color: #0a3871;
+}
+#inputTexto0::placeholder{
+    font-size: 30px;
+    color: #0a3871;
+}
+.layoutCriptografia {
+    display: block;
+    font-size: 17px;
+    color: #495057;
+}
+.layoutCriptografia p{
+    display: inline-block;
+}
+.divCriptografia button{
+    display: inline-block;
+    width: 250px;
+}
+#buttonCriptografia{
+    color: white;
+    background-color: #0a3871;
+    margin-right: 10px;
+    border: none; 
+}
+#buttonDescriptografia{
+    margin-left: 10px;
+}
+.divResultado{
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+#inputTexto1{
+    height:600px;
+    font-size: 20px;
+}
+#inputTexto1:placeholder-shown{
+    background: url("assets/img/imgTextAreaResultado.png") center center no-repeat;
+}
+#inputTexto1:not(:placeholder-shown){
+    background: none;
+}
+#buttonCopiar{
+    display: none;
+    width: 250px;
+    margin-top: 10px;
+}
+footer{
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid #356ea9;
+    padding: 15px;
+    background-color: #0a3871;
+}
+footer p {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+footer img{
+    margin-left: 10px;
+}
+footer a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2200px){
+    main{
+        align-items: center;
+    }
+    .divCriptografia button{
+        width: 400px;
+        height: 80px;
+    }
+    #inputTexto0{
+        height: 700px;
+        font-size: 40px;
+    }
+    #inputTexto0::placeholder{
+        font-size: 40px;
+    }
+    .divResultado{
+        width: 500px;
+    }
+    #inputTexto1{
+        height: 800px;
+        font-size: 30px;
+    }
+    #buttonCopiar{
+        width: 400px;
+        height: 80px;
+    }
+    footer p{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    #inputTexto0{
+        height: 400px;
+        font-size: 25px;
+    }
+    #inputTexto0::placeholder{
+        font-size: 25px;
+    }
+    .divResultado{
+        width: 350px;
+    }
+    #inputTexto1{
+        height: 450px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .divCriptografia button{
+        width: 190px;
+        font-size: 20px;
+    }
+    #buttonCriptografia{
+        margin-right: 0;
+    }
+    #buttonDescriptografia{
+        margin-left: 0;
+    }
+    .divResultado{
+        width: 220px;
+    }
+    #buttonCopiar{
+        width: 190px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    .divCriptografia{
+        width: 90%;
+    }
+    .divCriptografia button{
+        width: 49%;
+    }
+    #inputTexto0{
+        height: 275px;
+    }
+    .divResultado{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    #inputTexto1{
+        height: 225px;
+    }
+    #inputTexto1:placeholder-shown{
+        background: url("assets/img/imgTextAreaResultadoTablet.png") center center no-repeat;
+    }
+    #buttonCopiar{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 488px) {
+    #inputTexto0{
+        font-size: 20px;
+    }
+    #inputTexto0::placeholder{
+        font-size: 20px;
+    }
+    .layoutCriptografia p{
+        font-size: 12px;
+    }
+    #buttonCriptografia{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    #buttonDescriptografia{
+        width: 100%;
+    }
+    #inputTexto1{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 367px){
+    .layoutCriptografia p {
+        font-size: 10px;
+    }
+}
