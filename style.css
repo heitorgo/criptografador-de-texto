@@ -74,6 +74,7 @@ main button{
     background-color: white;
     border-radius: 20px;
     text-align: center;
+    box-shadow: 7px 7px 15px 7px #ced4da;
 }
 #inputTexto1{
     height:600px;
